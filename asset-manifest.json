@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/alvarium-soft-test-task/static/css/main.31d6cfe0.css",
+    "main.js": "/alvarium-soft-test-task/static/js/main.709061f2.js",
+    "index.html": "/alvarium-soft-test-task/index.html",
+    "main.709061f2.js.map": "/alvarium-soft-test-task/static/js/main.709061f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.709061f2.js"
+  ]
+}
