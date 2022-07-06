@@ -1,4 +1,5 @@
 import React from "react";
+import { ProductCard } from "../ProductCard";
 import './Products.scss'
 
 export const Products: React.FC = () => {
@@ -6,13 +7,7 @@ export const Products: React.FC = () => {
     <section
       className="products-list"
     >
-
-      <div
-        className="product-card"
-      >
-        
-      </div>
-
+      <ProductCard />
     </section>
   );
 };

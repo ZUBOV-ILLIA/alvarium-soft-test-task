@@ -6,11 +6,11 @@ export const Filtration: React.FC = () => {
     <section
       className="filter-products"
     >
-      <h1 className="filter-products__title">Цена</h1>
+      <h3 className="filter-products__title">Price</h3>
 
       <div className="filter-products__from-to">
         <div className="filter-products__from-to-item">
-          <p>от:</p>
+          <p>From:</p>
           <input
             className="filter-products__from-to-input"
             type="number"
@@ -18,7 +18,7 @@ export const Filtration: React.FC = () => {
         </div>
 
         <div className="filter-products__from-to-item">
-          <p>до:</p>
+          <p>To:</p>
           <input
             className="filter-products__from-to-input"
             type="number"
@@ -26,7 +26,7 @@ export const Filtration: React.FC = () => {
         </div>
       </div>
 
-      <h1 className="filter-products__title">Валюта</h1>
+      <h3 className="filter-products__title">Currency</h3>
 
       <label>
         USD
@@ -45,7 +45,7 @@ export const Filtration: React.FC = () => {
         />
       </label>
 
-      <h1 className="filter-products__title">Сортировка</h1>
+      <h3 className="filter-products__title">Sort</h3>
 
       <div className="filter-products__filter-by">
         <label>
@@ -53,7 +53,7 @@ export const Filtration: React.FC = () => {
             type="radio"
             name="sort"
           />
-          по возрастанию цены
+          from lower to upper price
         </label>
 
         <label>
@@ -61,7 +61,7 @@ export const Filtration: React.FC = () => {
             type="radio"
             name="sort"
           />
-          по убыванию цены
+          from upper to lower price
         </label>
 
         <label>
@@ -70,7 +70,7 @@ export const Filtration: React.FC = () => {
             name="sort"
             defaultChecked
           />
-          по алфавиту
+          alphabetically
         </label>
       </div>
 

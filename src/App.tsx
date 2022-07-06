@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from './api/products';
-import { getProductsSelector } from './api/selectors';
+// import { getProductsSelector } from './api/selectors';
 import { setProductsAction } from './store';
 import './App.scss';
 import { Filtration } from './componentst/Filtration';
@@ -9,7 +9,7 @@ import { Products } from './componentst/Products';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
-  const products = useSelector(getProductsSelector);
+  
 
   const loadProductsFromServer = async () => {
     try {
