@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from './api/products';
 import { getProductsSelector } from './api/selectors';
 import { setProductsAction } from './store';
-import './App.css';
+import './App.scss';
+import { Filtration } from './componentst/Filtration';
+import { Products } from './componentst/Products';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -12,8 +14,7 @@ const App: React.FC = () => {
   const loadProductsFromServer = async () => {
     try {
       const productsFromServer = await getProducts();
-      console.log('now will be dispatch')
-      
+
       dispatch(setProductsAction(productsFromServer.products))
     } catch (error) {
       console.log(error, 'error');
@@ -23,12 +24,14 @@ const App: React.FC = () => {
   useEffect(() => {
     loadProductsFromServer();
   }, []);
-  
-  console.log(products);
+
+  // console.log(products);
 
   return (
     <div className="App">
-      <h1>Title</h1>
+      <Filtration />
+      <Products />
+
     </div>
   );
 }
