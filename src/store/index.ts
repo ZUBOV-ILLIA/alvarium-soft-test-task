@@ -5,7 +5,7 @@ const initialState: State = {
   products: []
 };
 
-const setProductsAction = createAction<Product[]>('SET_PRODUCTS');
+export const setProductsAction = createAction<Product[]>('SET_PRODUCTS');
 
 const reducer = createReducer(initialState, (builder) => {
   builder.addCase(setProductsAction, (state, action) => {
