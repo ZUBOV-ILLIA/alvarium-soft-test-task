@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/alvarium-soft-test-task/static/css/main.655223c5.css",
-    "main.js": "/alvarium-soft-test-task/static/js/main.f0fe4307.js",
+    "main.css": "/alvarium-soft-test-task/static/css/main.87ca6348.css",
+    "main.js": "/alvarium-soft-test-task/static/js/main.13799c6b.js",
     "index.html": "/alvarium-soft-test-task/index.html",
-    "main.655223c5.css.map": "/alvarium-soft-test-task/static/css/main.655223c5.css.map",
-    "main.f0fe4307.js.map": "/alvarium-soft-test-task/static/js/main.f0fe4307.js.map"
+    "main.87ca6348.css.map": "/alvarium-soft-test-task/static/css/main.87ca6348.css.map",
+    "main.13799c6b.js.map": "/alvarium-soft-test-task/static/js/main.13799c6b.js.map"
   },
   "entrypoints": [
-    "static/css/main.655223c5.css",
-    "static/js/main.f0fe4307.js"
+    "static/css/main.87ca6348.css",
+    "static/js/main.13799c6b.js"
   ]
 }
