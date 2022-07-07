@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setFilterFromAction, setFilterToAction } from "../../store";
+import { setFilterFromAction, setFilterToAction, setSortByToAction } from "../../store";
 import './Filtration.scss'
 
 export const Filtration: React.FC = () => {
@@ -55,8 +55,7 @@ export const Filtration: React.FC = () => {
         <input
           type="radio"
           name="currency"
-          defaultChecked
-        />
+          />
       </label>
 
       <label>
@@ -64,6 +63,7 @@ export const Filtration: React.FC = () => {
         <input
           type="radio"
           name="currency"
+          defaultChecked
         />
       </label>
 
@@ -74,6 +74,9 @@ export const Filtration: React.FC = () => {
           <input
             type="radio"
             name="sort"
+            onClick={event => {
+              dispatch(setSortByToAction('fromSmall'))
+            }}
           />
           from lower to upper price
         </label>
@@ -82,6 +85,9 @@ export const Filtration: React.FC = () => {
           <input
             type="radio"
             name="sort"
+            onClick={event => {
+              dispatch(setSortByToAction('fromHigh'))
+            }}
           />
           from upper to lower price
         </label>
@@ -90,6 +96,9 @@ export const Filtration: React.FC = () => {
           <input
             type="radio"
             name="sort"
+            onClick={event => {
+              dispatch(setSortByToAction('alphabetically'))
+            }}
             defaultChecked
           />
           alphabetically

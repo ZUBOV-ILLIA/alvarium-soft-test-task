@@ -1,19 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { getProductsSelector, setFilterFromSelector, setFilterToSelector } from "../../store/selectors";
+import { Product } from "../../react-app-env";
+import { getProductsSelector, setFilterFromSelector, setFilterToSelector, setSortBySelector } from "../../store/selectors";
 import './ProductCard.scss';
 
 export const ProductCard: React.FC = () => {
   const filterFrom = useSelector(setFilterFromSelector);
   const filterTo = useSelector(setFilterToSelector);
   const products = useSelector(getProductsSelector);
+  const sortValue = useSelector(setSortBySelector);
 
-  const filteredProducts = products
+  const [productsToSee, setProductsToSee] = useState<Product[] | null>(null);
+
+  const filteredFromToProducts = products
     .filter(product => product.price >= filterFrom && product.price <= filterTo);
+
+
+  const sortBy = async (inp: string) => {
+    switch (inp) {
+      case 'fromSmall':
+        setProductsToSee([...filteredFromToProducts].sort((a, b,) => a.price - b.price));
+        break;
+
+      case 'fromHigh':
+        setProductsToSee([...filteredFromToProducts].sort((a, b,) => b.price - a.price));
+        break;
+
+      default:
+        setProductsToSee([...filteredFromToProducts].sort((a, b,) => a.name.localeCompare(b.name)));
+    }
+  }
+
+  useEffect(() => {
+    sortBy(sortValue);
+  }, [sortValue, products, filterFrom, filterTo]);
 
   return (
     <>
-      {filteredProducts.map(product => (
+      {!!productsToSee && productsToSee.map(product => (
         <div
           className="product-card"
           key={product.id}

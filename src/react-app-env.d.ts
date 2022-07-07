@@ -4,6 +4,7 @@ export interface State {
   products: Product[],
   filterFrom: number,
   filterTo: number,
+  sortBy: string,
 }
 
 export interface Action {
