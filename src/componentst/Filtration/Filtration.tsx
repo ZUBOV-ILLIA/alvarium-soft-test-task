@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setFilterFromAction, setFilterToAction, setSortByToAction } from "../../store";
+import { setCurrencyAction, setFilterFromAction, setFilterToAction, setSortByToAction } from "../../store";
 import './Filtration.scss'
 
 export const Filtration: React.FC = () => {
@@ -50,22 +50,52 @@ export const Filtration: React.FC = () => {
 
       <h3 className="filter-products__title">Currency</h3>
 
-      <label>
-        USD
-        <input
-          type="radio"
-          name="currency"
+      <div className="filter-products__currency-container">
+        <label>
+          <input
+            type="radio"
+            name="currency"
+            onClick={() => {
+              dispatch(setCurrencyAction('usd'))
+            }}
           />
-      </label>
+          USD
+        </label>
 
-      <label>
-        UAH
-        <input
-          type="radio"
-          name="currency"
-          defaultChecked
-        />
-      </label>
+        <label>
+          <input
+            type="radio"
+            name="currency"
+            onClick={() => {
+              dispatch(setCurrencyAction('euro'))
+            }}
+          />
+          EURO
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="currency"
+            onClick={() => {
+              dispatch(setCurrencyAction('gbp'))
+            }}
+          />
+          GBP
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="currency"
+            onClick={() => {
+              dispatch(setCurrencyAction('uah'))
+            }}
+            defaultChecked
+          />
+          UAH
+        </label>
+      </div>
 
       <h3 className="filter-products__title">Sort</h3>
 
@@ -78,7 +108,7 @@ export const Filtration: React.FC = () => {
               dispatch(setSortByToAction('fromSmall'))
             }}
           />
-          from lower to upper price
+          from lower price
         </label>
 
         <label>
@@ -89,7 +119,7 @@ export const Filtration: React.FC = () => {
               dispatch(setSortByToAction('fromHigh'))
             }}
           />
-          from upper to lower price
+          from upper price
         </label>
 
         <label>
@@ -104,8 +134,6 @@ export const Filtration: React.FC = () => {
           alphabetically
         </label>
       </div>
-
-
     </section>
   );
 };

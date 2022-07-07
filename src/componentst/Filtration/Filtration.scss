@@ -2,8 +2,10 @@
   position: fixed;
   margin: 0;
   padding: 50px 15px 0;
-  height: 100vh;
-  width: 250px;
+  // height: 100vh;
+  top: 0;
+  bottom: 0;
+  width: 175px;
   background-color: #fff;
   z-index: 100;
 
@@ -24,12 +26,17 @@
   }
 
   &__from-to-input {
-    width: 60%;
+    width: 80%;
     appearance: textfield;
   }
 
   &__from-to-input::-webkit-inner-spin-button {
     opacity: 1;
+  }
+
+  &__currency-container {
+    display: flex;
+    flex-direction: column;
   }
 
   &__filter-by {

@@ -7,7 +7,5 @@ export const getProducts = async () => {
     throw new Error('something wrong in step getProducts');
   }
 
-  // console.log(response, 'console');
-
   return response.json();
 }

@@ -5,6 +5,8 @@ export interface State {
   filterFrom: number,
   filterTo: number,
   sortBy: string,
+  currency: string,
+  currencyFromServer: Currency,
 }
 
 export interface Action {
@@ -18,4 +20,10 @@ export interface Product {
   price: number,
   image: string,
   description: string,
+}
+
+export interface Currency {
+  usd: number,
+  euro: number,
+  gbp: number,
 }
