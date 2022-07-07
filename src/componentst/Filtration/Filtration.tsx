@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setFilterFromAction, setFilterToAction } from "../../store";
 import './Filtration.scss'
 
 export const Filtration: React.FC = () => {
+  const dispatch = useDispatch()
+  const [filterFrom, setFilterFrom] = useState(0);
+  const [filterTo, setFilterTo] = useState(100000);
+
+  useEffect(() => {
+    dispatch(setFilterFromAction(filterFrom));
+    dispatch(setFilterToAction(filterTo));
+
+  }, [filterFrom, filterTo]);
+
   return (
     <section
       className="filter-products"
@@ -14,6 +26,11 @@ export const Filtration: React.FC = () => {
           <input
             className="filter-products__from-to-input"
             type="number"
+            value={filterFrom}
+            min="0"
+            onChange={event => {
+              setFilterFrom(+event.target.value);
+            }}
           />
         </div>
 
@@ -22,6 +39,11 @@ export const Filtration: React.FC = () => {
           <input
             className="filter-products__from-to-input"
             type="number"
+            value={filterTo}
+            min="0"
+            onChange={event => {
+              setFilterTo(+event.target.value);
+            }}
           />
         </div>
       </div>

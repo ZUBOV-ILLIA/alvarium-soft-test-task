@@ -1,14 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { getProductsSelector } from "../../api/selectors";
+import { getProductsSelector, setFilterFromSelector, setFilterToSelector } from "../../store/selectors";
 import './ProductCard.scss';
 
 export const ProductCard: React.FC = () => {
+  const filterFrom = useSelector(setFilterFromSelector);
+  const filterTo = useSelector(setFilterToSelector);
   const products = useSelector(getProductsSelector);
+
+  const filteredProducts = products
+    .filter(product => product.price >= filterFrom && product.price <= filterTo);
 
   return (
     <>
-      {products.map(product => (
+      {filteredProducts.map(product => (
         <div
           className="product-card"
           key={product.id}

@@ -2,6 +2,8 @@
 
 export interface State {
   products: Product[],
+  filterFrom: number,
+  filterTo: number,
 }
 
 export interface Action {
